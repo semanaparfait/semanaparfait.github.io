@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="index.css">
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
+    
+
+</head>
+<body>
+    <!-- akantu kubwenge by bigg -->
+    <!-- <marquee behavior="scroll" direction="left">BOSS</marquee> -->
+    <div class="chat-bot">
+        <i class="fa-solid fa-comments" onclick="openChatOverFlow()"></i>
+        <div class="chat-overflow" style="display: none;">
+            <!-- <i class="fa-solid fa-xmark"></i> -->
+            <h3>Hello! It's me <br>  <span>SEMANA</span></h3>
+            <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" >
+            <p> How can I assist you today?</p>
+            <button onclick="openChattingPage()">Ask semana</button>
+        </div>
+        <div class="chat-container" style="display: none;">
+            <div class="chat-header">
+                <div class="back-button">←</div>
+                <div class="avatar"><img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" alt=""></div>
+                <div>
+                    <div>SEMANA Bot</div>
+                    <div class="status">We typically reply within a few minutes.</div>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    Hi there 👋 How can I help you today?
+                </div>
+                <div class="message bot-message">
+                    👋 Hello! Thanks for reaching out.
+
+I'm currently unavailable right now, but don’t worry — you can still leave your message and I’ll get back to you as soon as possible.
+
+📩 You can also contact me directly:
+- Email: semanaparfait@gmail.com  
+- Phone/WhatsApp: +237 6XX XXX XXX  
+- GitHub: https://github.com/semanaparfait  
+- LinkedIn: https://linkedin.com/in/semanaparfait  
+- Portfolio: https://your-portfolio-link.com
+
+Thank you for your patience — I appreciate it! 🙏
+
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button class="send-button" id="send-button">→</button>
+            </div>
+        </div>
+        <!-- <div class="chat-page" style="display: none;">
+            <div class="chatting-page" style="background-color: white;">
+
+           
+            <div class="title">
+                <div class="left" style=" display: flex; justify-content: space-evenly; align-items: center; gap: 1rem;">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" >
+                </div>
+                <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="purple" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,149.3C384,128,480,96,576,101.3C672,107,768,149,864,165.3C960,181,1056,171,1152,170.7C1248,171,1344,181,1392,186.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+        </div>
+            <div class="all">
+                <div class="chatting-body">
+                    <p id="user-input">semana shema Parfait</p> <i class="fa-solid fa-user"></i> 
+
+                </div>
+                <div class="chatting-inputs">
+                    <i class="fa-solid fa-plus"></i>
+                    <input type="text" id="texting" placeholder="Type a message">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <button><i class="fa-solid fa-paper-plane" onclick="sendMessage()"></i></button>
+                </div>
+            </div>
+ 
+        </div> -->
+    </div>
+    <!-- ---------------nav/header------------------ -->
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg">
+                <div class="my_name">
+                    <h4>SEMANA SHEMA</h4>
+                    <p>Parfait</p>
+                </div>
+
+            </div>
+            <div class="links-button" style="display: flex; gap: 2rem;">
+                <i class="fa-regular fa-circle-xmark" onclick="closemenu()" style="color: wheat;" ></i>
+
+                <ul class="nav-links">
+          
+                    <li id="home"><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio-section">portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                </ul>
+    
+                <button><i class="fa-solid fa-paper-plane"></i> hire Me</button>
+            </div>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            
+
+        </div>
+    </nav>
+    <!-- ----------------------hero section--------------------- -->
+
+    <div class="hero-section" id="about">
+        <div class="personal-desc">
+            <p id="welcome-mess">👋 Welcome to my digital world</p><br>
+            <h2 id="my-career">Hi, I'm <span class="mynames"> </span><br>A Front-End Developer & Software Engineer</h2><br>
+            <p id="qutoes"><em>"Bringing ideas to life through elegant code."</em></p><br>
+
+            <div class="hero-links">
+                <a href="#" class="hireme"><i class="fa-thin fa-envelope"></i> Let's Work Together</a>
+                <a href="#portfolio-section" class="seeportfolio">View My Work</a>
+            </div><br>
+            
+            <p id="my-Intro">Hi, I'm Semana — a passionate front-end developer and software engineering student. I build user-friendly websites, building fast, responsive, and visually engaging web experiences. with clean code and creative design. I'm always learning and love turning ideas into digital solutions.</p><br>
+            <div class="hero-platform">
+                <p>Connect with me:</p>
+                <div class="icons">
+
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                </div>
+            </div>
+        </div>
+<!-- BOSS ROTATE PROFILE HTML  START-->
+ 
+<!-- BOSS ROTATE PROFILE HTML END -->
+
+<!-- NEW ROTATING PFP HTML START  -->
+<div class="container" style="animation: fromTop 2s ;">
+    <div class="circle green-circle"></div>
+    <div class="circle blue-circle"></div>
+    <div class="circle yellow-circle"></div>
+    <div class="profile-wrapper">
+        <img src="./images/me.jpg" alt="Profile Photo" class="profile-img">
+    </div>
+</div>
+<!-- NEW ROTATING PFP HTML END  -->
+        <div class="personal-details" style="animation: ToTopQutoes 2s;">
+            <div class="details-1">
+
+                <p>2+</p>
+                <h4>Year of Experience</h4><br>
+                <p>100%</p>
+                <h4>Success Rate</h4><br>
+            </div>
+
+            <div class="details 2">
+
+                <p>40+</p>
+                <h4>Happy Clients</h4><br>
+                <p>90+</p>
+                <h4>Projects Completed</h4><br>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ----------------------services section--------------------- -->
+    <!-- <center class="none"> -->
+        <div class="services-section" id="services">
+            <h1>What I do</h1><br>
+            <p class="service-description">I offer expert web development, game development, and cybersecurity solutions that combine cutting-edge technology and creative design to deliver high-performance, secure, and engaging digital experiences. Whether you're looking to build a dynamic website, create an immersive game, or protect your online presence, I provide innovative solutions tailored to your needs.</p><br>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="service service-1" style=" animation:  fromLeftCareer 2s; ">
+                        <h3>Responsive Web Design</h3><br>
+                        <p>Designing websites that look great on any device, ensuring a seamless user experience across desktops, tablets, and smartphones.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <div class="icon">📱</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-icon">
+                        <div class="icon">🖥️</div>
+                    </div>
+                    <div class="service service-2" style="animation: ToTopQutoes 2s;">
+                        <h3>Web Development</h3><br>
+                        <p>Building fully functional websites with modern technologies like HTML, CSS, JavaScript, and more to bring your ideas to life.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="service service-3" style=" animation:  fromLeftCareer 2s;">
+                        <h3>UI/UX Design</h3><br>
+                        <p>Creating intuitive, visually appealing, and user-centric interfaces to enhance the overall experience of your website or app.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <div class="icon">🎨</div>
+                    </div>
+                </div>
+                
+                <!-- <div class="timeline-item right">
+                    <div class="timeline-icon">
+                        <div class="icon">📱</div>
+                    </div>
+                    <div class="service service-4">
+                        <h3>Mobile-First Development</h3><br>
+                        <p>Developing websites and apps with mobile-first principles, ensuring optimal performance and accessibility for mobile users.</p>
+                    </div>
+                </div> -->
+                
+                <div class="timeline-item right">
+                    <div class="service service-5" style="animation: ToTopQutoes 2s;">
+                        <h3>Website Optimization</h3><br>
+                        <p>Optimizing websites for speed, SEO, and performance to improve user experience and search engine ranking.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <div class="icon">⚡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </center> -->
+
+    <!-- --------------------------portfolio------------------- -->
+     <div class="portfolio-section" id="portfolio-section">
+        <div class="titles">
+            <div class="left-title">
+<center >
+    <h1>Portfolio showcase</h1><br>
+    <p>Welcome to my portfolio! Here, I showcase some of the projects I’ve worked on, highlighting my skills, creativity, and passion for technology. Each project reflects my journey, growth.</p>
+</center>
+            </div><br><br>
+
+
+                <div class="right-titles">
+                    <button onclick="openProjects()">Projects</button>
+                    <button id="Certficates" onclick="openCertificates()">Certficates</button>
+                    <button  id="mySkills" onclick="openMyskills()">My skills</button>
+                </div>
+      
+        </div><br><br>
+        <div id="projects" >
+
+
+            <div class="portfolio-projects" >
+    
+                <div class="project" 
+                    data-image="./images/projects/screencapture-127-0-0-1-5502-contact-html-2025-05-01-09_28_02.png"
+                    data-title="Contact Us"
+                    data-description="Get in touch with MovieNest for inquiries, support, or feedback. 
+                    Whether you have questions about subscriptions, technical issues, or want to suggest a movie, we’re here to help. 
+                    Our team is dedicated to providing quick and helpful assistance to ensure the best experience for our users. 
+                    Feel free to contact us anytime — your opinion matters and helps us improve our platform."
+                    
+                    data-tecskills="React"
+                    data-tecskills2="Tailwind CSS"
+                    data-tecskills3="Javascript"
+                    data-tecskills4="Flask"
+                    data-tecskills5="PHP"
+                    data-tecskills6="Node js">
+                    <img src="./images/projects/screencapture-127-0-0-1-5502-contact-html-2025-05-01-09_28_02.png" alt="Admin Dashboard" id="project-image">
+                    <div class="overFlow">
+                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                    </div>
+    
+                </div>
+            
+                <div class="project"
+                    data-image="./images/projects/Capture2.PNG"
+                    data-title="E-commerce Store"
+                    data-description="A full-featured online shop with product listings, cart, and checkout system."
+                    data-tecskills="React"
+                    data-tecskills2="Firebase"
+                    data-tecskills3="Javascript"
+                    data-tecskills4="Flask"
+                    data-tecskills5="PHP"
+                    data-tecskills6="Node js">
+                    <img src="./images/projects/Capture2.PNG"alt="E-commerce Store" id="project-image">
+                    <div class="overFlow">
+                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                    </div>
+    
+                </div>
+            
+                <div class="project"
+                    data-image="./images/projects/screencapture-127-0-0-1-5502-payment-html-2025-05-01-09_28_30.png" 
+                    data-title="Personal Portfolio"
+                    data-description="A responsive personal portfolio to showcase projects, skills, and contact info."
+                    data-tecskills="HTML"
+                    data-tecskills2="css"
+                    data-tecskills3="Javascript"
+                    data-tecskills4="Flask"
+                    data-tecskills5="PHP"
+                    data-tecskills6="Node js">
+                    <img src="./images/projects/screencapture-127-0-0-1-5502-payment-html-2025-05-01-09_28_30.png" id="project-image">
+                    <div class="overFlow">
+                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                    </div>
+    
+                </div>
+            
+                <div class="project"
+                    data-image="./images/projects/screencapture-127-0-0-1-5501-event-html-2025-05-01-09_22_50.png"
+                    data-title="Startup Landing Page"
+                    data-description="A clean and modern landing page for promoting a tech startup or SaaS product."
+                    data-tecskills="React"
+                    data-tecskills2="Tailwind CSS"
+                    data-tecskills3="Javascript"
+                    data-tecskills4="Flask"
+                    data-tecskills5="PHP"
+                    data-tecskills6="Node js">
+                    <img src="./images/projects/screencapture-127-0-0-1-5501-event-html-2025-05-01-09_22_50.png" alt="Startup Landing Page" id="project-image">
+                    <div class="overFlow">
+                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                    </div>
+    
+                </div>
+            
+                <div class="project"
+                    data-image="./images/projects/Capture4.PNG"
+                    data-title="Blog Platform"
+                    data-description="A blogging platform where users can create, edit, and delete posts."
+                    data-tecskills="React"
+                    data-tecskills2="Tailwind CSS"
+                    data-tecskills3="Javascript"
+                    data-tecskills4="Flask"
+                    data-tecskills5="MongoDB"
+                    data-tecskills6="Node js">
+                
+                    <img src="./images/projects/Capture4.PNG" alt="Blog Platform" id="project-image">
+                    <div class="overFlow">
+                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                    </div>
+    
+                </div>
+            
+                <div class="project"
+                    data-image="./images/projects/Capture.PNG"
+                    data-title="Weather App"
+                    data-description="A simple app that shows real-time weather updates for any city."
+                    data-tecskills="Firebase"
+                    data-tecskills2="JavaScript"
+                    data-tecskills3="Javascript"
+                    data-tecskills4="Flask"
+                    data-tecskills5="Flask"
+                    data-tecskills6="MongoDB">
+                    <img src="./images/projects/Capture.PNG" alt="Weather App" id="project-image">
+                    <div class="overFlow">
+                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                    </div>
+    
+                </div>
+                
+                
+            </div><br><br>
+            <center>
+    
+                <button class="load-more">Load More</button>
+            </center>
+            <center id="centering-project">
+                <div class="project-card">
+
+                    <div class="portfolio-card" style="display: none;" >
+                        <i class="fa-solid fa-xmark"></i><br><br>
+                        <img src="" id="project-image-card">
+                        <h2 id="project-title"></h2><br>
+                        <p id="project-description"></p><br>
+                        <div class="technologies">
+                            <h4>Technologies: </h4>
+                            <div class="tec-skills">
+                                <p id="technology-skills"></p>
+                                <p id="technology-skills2"></p>
+                                <p id="technology-skills3"></p>
+                                <p id="technology-skills4"></p>
+                                <p id="technology-skills5"></p>
+                                <p id="technology-skills6"></p>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </center>
+        </div>
+  
+
+
+        <!-- -----------------------certficates--------- -->
+        <div class="certificates" style="display: none;">
+            <h1>Certificates</h1><br><br>
+        
+            <div class="certificate-divs">
+        
+                <div class="certificate"
+                    data-image="./images/certficates/1600w-Qn4Rei141MM.webp"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/1600w-Qn4Rei141MM.webp" alt="Certificate Image">
+                </div>
+        
+                <div class="certificate"
+                    data-image="./images/certficates/download (1).jpg"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/download (1).jpg" alt="Certificate Image">
+                </div>
+        
+                <div class="certificate"
+                    data-image="./images/certficates/1600w-Qn4Rei141MM.webp"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/1600w-Qn4Rei141MM.webp" alt="Certificate Image">
+                </div>
+        
+                <div class="certificate"
+                    data-image="./images/certficates/download (2).jpg"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/download (2).jpg" alt="Certificate Image">
+                </div>
+        
+            
+        
+                <div class="certificate"
+                    data-image="./images/certficates/download.jpg"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/download.jpg" alt="Certificate Image">
+                </div>
+        
+                <div class="certificate"
+                    data-image="./images/certficates/download.png"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/download.png" alt="Certificate Image">
+                </div>
+        
+            </div>
+        </div>
+        <!-- ------------------------skills------------------ -->
+        <div class="skills-section" id="mySkills" style="display: none;">
+            <!-- <h1>My Skills</h1><br><br> -->
+            <!-- <p>As a software developer, I possess a diverse skill set that includes proficiency in programming languages such as JavaScript, Python, and C++. I have hands-on experience with frameworks like React and Node.js, enabling me to build dynamic web applications. My expertise extends to database management with SQL and NoSQL databases, ensuring efficient data handling. Additionally, I am well-versed in version control systems like Git, allowing for seamless collaboration on projects. My strong problem-solving abilities and attention to detail drive me to create high-quality code and deliver exceptional user experiences.</p><br><br> -->
+            <div class="skills">
+                <div id="python-card" class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div id="html-card" class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5">
+                    <p>HTML</p>
+                </div>
+                <div id="javascript-card" class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div id="php-card" class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP">
+                    <p>PHP</p>
+                </div>
+                <div id="css-card" class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3">
+                    <p>CSS</p>
+                </div>
+                <div id="c-card" class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C Language">
+                    <p>C</p>
+                </div>
+            </div>
+            <!-- --------------skills on Python------------------ -->
+             <div class="python">
+                <div class="left-desc-python">
+                    <h2>My approach that <span>Python</span> <br> empowers my clients to <br>  <span>2x their revenue</span> </h2><br>
+                   
+                    <p>I’ve refined this process over 10+ years in the design industry, making it a proven approach you can trust with confidence.</p><br><br>
+                    <button>Book A call</button>
+
+
+                </div>
+                <div class="right-desc-python">
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>01</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Understanding Your Vision</p></strong><br>
+                            <p>I take the time to understand your goals, brand, and audience to create a tailored design strategy.</p>
+                        </div>
+                    </div>
+
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>02</p>
+                        </div>
+                        <div class="desc">
+                            <strong ><p>Designing the System with Python</p></strong><br>
+                            <p class="text-gray-700">I design a clear, scalable solution using Python, tailored to the project's needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>03</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Build and Test</p></strong><br>
+                            <p>I develop the system carefully, testing every part to make sure it works smoothly..</p>
+                        </div>
+                    </div>
+
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>04</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Deliver and Improve</p></strong><br>
+                            <p>I launch the final product and stay ready to optimize it as the project grows.</p>
+                        </div>
+                    </div>
+
+
+             </div>
+            </div>
+
+            <!-- -----------------for html------------- -->
+            <div class="html" style="display: none;">
+                <div class="left-desc-python">
+                    <h2>My approach that <span>HTML</span> <br> empowers my clients to <br>  <span>create dynamic websites</span> </h2><br>
+                    <p>With over 10+ years in web development, I’ve refined a process that ensures your website is both functional and visually appealing.</p><br><br>
+                    <button>Book A call</button>
+                </div>
+            
+                <div class="right-desc-python">
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>01</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Understanding Your Website Needs</p></strong><br>
+                            <p>I take the time to understand your business, target audience, and the goals for your website to create a tailored strategy.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>02</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Designing the Website with HTML</p></strong><br>
+                            <p>I design a responsive, user-friendly website layout using HTML, ensuring it is both functional and easy to navigate.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>03</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Develop and Test</p></strong><br>
+                            <p>I build the website using clean HTML code, test across browsers, and make sure it is fully optimized for performance.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>04</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Launch and Improve</p></strong><br>
+                            <p>After launching, I continue to monitor and improve your website, making sure it stays up-to-date with any new features or changes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ------------------------for javascript------------------ -->
+            <div class="JavaScript" style="display: none;">
+                <div class="left-desc-python">
+                    <h2>My approach that <span>HTML & JavaScript</span> <br> empowers my clients to <br>  <span>build interactive websites</span> </h2><br>
+                    <p>With over 10+ years in web development, I’ve perfected a process that ensures your website is dynamic, interactive, and engaging.</p><br><br>
+                    <button>Book A Call</button>
+                </div>
+            
+                <div class="right-desc-python">
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>01</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Understanding Your Website Goals</p></strong><br>
+                            <p>We start by understanding your business, audience, and what you want your website to achieve, to build a strategy that works.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>02</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Designing with HTML and JavaScript</p></strong><br>
+                            <p>I design a responsive and interactive website using HTML for structure and JavaScript for dynamic functionality and interactivity.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>03</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Build and Test</p></strong><br>
+                            <p>I develop the website using clean HTML, JavaScript for interactive features, and perform rigorous testing to ensure seamless functionality across devices.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>04</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Launch and Optimize</p></strong><br>
+                            <p>After launch, I continue to enhance your website, ensuring it remains optimized, functional, and updated with the latest trends and features.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------------for PHP------------------ -->
+            <div class="php" style="display: none;">
+                <div class="left-desc-python">
+                    <h2>My approach that <span>PHP & Databases</span> <br> empowers my clients to <br> <span>build powerful web applications</span> </h2><br>
+                    <p>With over 10+ years in backend development, I’ve perfected a process that ensures your website is dynamic, data-driven, and scalable.</p><br><br>
+                    <button>Book A Call</button>
+                </div>
+            
+                <div class="right-desc-python">
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>01</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Understanding Your Application Needs</p></strong><br>
+                            <p>We start by understanding your business processes and data requirements to create a backend solution that meets your goals.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>02</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Designing the Database Structure</p></strong><br>
+                            <p>I design a robust and secure database schema that supports your application's functionality, ensuring efficient data storage and retrieval.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>03</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Building the Backend with PHP</p></strong><br>
+                            <p>I develop the server-side logic using PHP, connecting the front end to the database, managing sessions, authentication, and business logic.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>04</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Testing, Launching, and Scaling</p></strong><br>
+                            <p>After launch, I rigorously test the backend, optimize queries, enhance security, and ensure your application can scale as your business grows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- --------------------for css---------------- -->
+            <div class="css" style="display: none;">
+                <div class="left-desc-python">
+                    <h2>My approach that <span>HTML & CSS</span> <br> empowers my clients to <br>  <span>create stunning websites</span> </h2><br>
+                    <p>With over 10+ years of experience in web development, I specialize in creating visually appealing and responsive websites using HTML for structure and CSS for styling.</p><br><br>
+                    <button>Book A Call</button>
+                </div>
+            
+                <div class="right-desc-python">
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>01</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Understanding Your Design Goals</p></strong><br>
+                            <p>I begin by understanding your vision for the website, your brand identity, and what style best represents your business.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>02</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Structuring the Website with HTML</p></strong><br>
+                            <p>I use HTML to structure your website, ensuring it’s clean, organized, and accessible to all users, including search engines.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>03</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Styling the Website with CSS</p></strong><br>
+                            <p>Using CSS, I add colors, layouts, fonts, and animations to make the website visually appealing and ensure it’s responsive on all devices.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>04</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Launch and Refine</p></strong><br>
+                            <p>Once launched, I continue to refine and adjust the website’s design and style to enhance user experience and meet changing needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------------even for c----------- -->
+            <div class="c-programming" style="display: none;">  
+                <div class="left-desc-python">
+                    <h2>My approach that <span>HTML & C</span> <br> empowers my clients to <br>  <span>build efficient applications</span> </h2><br>
+                    <p>With over 10+ years of experience in software development, I use HTML for web interfaces and C for building high-performance backend applications.</p><br><br>
+                    <button>Book A Call</button>
+                </div>
+            
+                <div class="right-desc-python">
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>01</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Understanding Your Requirements</p></strong><br>
+                            <p>We begin by understanding your business needs, application goals, and performance requirements to create a solid plan.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>02</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Designing the Interface with HTML</p></strong><br>
+                            <p>I create a clear, structured, and user-friendly interface using HTML, ensuring a smooth user experience across all devices.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>03</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Developing Core Functionality with C</p></strong><br>
+                            <p>Using C, I develop high-performance, low-level backend functionalities to power your application, ensuring efficiency and speed.</p>
+                        </div>
+                    </div>
+            
+                    <div class="desc-cards">
+                        <div class="numbering">
+                            <p>04</p>
+                        </div>
+                        <div class="desc">
+                            <strong><p>Launch and Optimize</p></strong><br>
+                            <p>After launch, I continue to monitor and optimize your application, ensuring it runs smoothly and meets performance expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+
+
+<!-- ---------------------Education------------------------------- -->
+ <h1 style="padding-left: 2rem;">Education Background</h1>
+ <br><br>
+ <div class="education-section" id="education">
+    <div class=" school high-school" style="   animation:  fromLeftCareer 2s;">
+        <img src="./images/compressedlogo.png">
+        <div class="desc">
+            <h3>ESSJT(St Joseph Le Travailleur Secondary School)</h3><br>
+            <h4>High School (2020 - 2023)</h4><br>
+            <p id="desc">Completed my high school education at ESSJT with a specialization in Software Development, where I gained hands-on experience in programming, web technologies, and system design. This experience sparked my passion for building tech solutions and laid the groundwork for my journey into software engineering.</p><br>
+            <div class="skills"><br>
+                <p>#Mathematics</p>
+                <p>#javascript</p>
+                <p>#PHP</p>
+                <p>#System Analysis</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class=" school university" style=" animation: ToTopQutoes 2s;">
+        <img src="./images/download.jpeg">
+        <div class="desc">
+            <h3>ALU (African Leadership University)</h3><br>
+            <h4>University (2024 - 2028)</h4><br>
+            <p id="desc">Currently studying Computer Software Engineering at the African Leadership University, with a focus on mastering core concepts like software development, data structures, and algorithms. This program is equipping me with the skills needed to build scalable solutions and solve real-world technology problems.</p><br>
+            <div class="skills">
+                <p>#SoftwareEngineering</p>
+                <p>#Cybersecurity</p>
+                <p>#Algorithms</p>
+                <!-- <p>#DataStructures</p> -->
+
+
+            </div>
+        </div>
+    </div>
+ </div><br><br>
+
+ <!-- -------------------------experincesection----------------- -->
+  <div id="experience">
+    <h1 style="padding-left: 2rem;">Experinces</h1><br><br>
+    <div class="experience">
+        <div class=" card1 experience-card" style="animation:  fromLeftCareer 2s;">
+            <img src="./images/download.jpeg"><br><br>
+            <strong><p>Software Engineering</p></strong><br>
+            <strong><p>African Leadership University(september 2024 - Present)</p></strong><br>
+            <p>Currently serving as a Software Development Coach, supporting cohorts across multiple university campuses, including ALU and AUCA. Key responsibilities include coaching students.</p><br>
+            <center>
+
+                <div class="skills">
+    
+                    <ul>
+                        <strong><p>Skills Learned</p></strong><br>
+                        <li>Team Leadership</li>
+                        <li>Agile Project Management</li>
+                        <li>Assessment Design</li>
+                        <li>Curriculum Development</li>
+                        <li>Technical Mentorship</li>
+                        <li>Code Review & Feedback</li>
+                        <li>Communication & Collaboration</li>
+                        <li>Problem-Solving</li><br>
+                    </ul>
+                    
+        
+                    <ul>
+                        <strong><p>Technologies used </p></strong><br>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Javascript</li>
+                        <li>React</li>
+                        <li>Git & GitHub</li>
+                        <li>HTML & CSS </li>
+                        <li>VS Code </li><br>
+
+                    </ul>
+                </div>
+            </center>
+
+
+        </div>
+
+        <div class="card2 experience-card" style=" animation: fromTop 2s ;">
+            <img src="./images/experience/N@tcom-Logo.png"><br><br>
+            <strong><p>Software Engineering</p></strong><br>
+            <strong><p>N@TCOM rwanda(January 2022 - August 2022)</p></strong><br>
+            <p>
+                At N@TCOM Rwanda , I serve as a Software Development Coach. 
+                My role involves mentoring students in software engineering, developing and delivering technical curriculum, 
+                designing assessments, and conducting performance evaluations. I work closely with learners to build practical coding skills 
+                and prepare them for real-world tech industry demands.
+            </p><br>
+            
+  
+
+                <div class="skills">
+    
+                    <ul>
+                        <strong><p>Skills Learned </p></strong><br>
+                        <li>Team Leadership</li>
+                        <li>Agile Project Management</li>
+                        <li>Assessment Design</li><br>
+                    </ul>
+        
+                    <ul>
+                        <strong><p>Technologies used </p></strong><br>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Javascript</li>
+                        <li>React</li>
+                        <li>Boostrap</li>
+                    </ul>
+                </div>
+    
+
+
+        </div>
+
+        <div class=" card3 experience-card" style=" animation: ToTopQutoes 2s;">
+            <center>
+
+                <img src="./images/compressedlogo.png"><br><br>
+            </center>
+            <strong><p>Software Engineering</p></strong><br>
+            <strong><p>ESSJT(January 2022 - 2023)</p></strong><br>
+            <p>
+                At ESSJT, I contributed as a junior software support assistant, where I was responsible for troubleshooting basic system issues, 
+                assisting students and staff with technical problems, and maintaining computer lab functionality. 
+                This role helped strengthen my communication skills, hands-on IT support abilities, and teamwork in an academic environment.
+            </p><br>
+            
+            <div class="skills">
+    
+                <ul>
+                    <strong><p>Skills Learned</p></strong><br>
+                    <li>Facilitating Peer Learning</li>
+                    <li>Project Planning and Execution</li>
+                    <li>Designing Learning Outcomes</li>
+                    <li>Coaching and Mentorship</li>
+                    <li>Conflict Resolution within Teams</li>
+                    <li>Constructive Feedback Delivery</li>
+                    <li>Time Management </li><br>
+                </ul>
+                
+    
+                <ul>
+                    <strong><p>Technologies used </p></strong><br>
+                    <li>HTML</li>
+                    <li>SQL</li>
+                    <li>Javascript</li>
+                    <li>PHP</li>
+                    
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+  </div>
+  <!-- ------------------------------clentstestimon--------------- -->
+   <div class="client-testimony" style="display: none;">
+    <h1>Client Testimony</h1><br><br><br>
+
+  <center style=" position: relative;">
+      <i class="fa-solid fa-arrow-left" onclick="scrollCommentLeft()"></i>
+      <i class="fa-solid fa-arrow-right" onclick="scrollCommentRight()"></i>
+    <div class="clients">
+        <div class="client-card">
+            <div class="title">
+                <p>What <br> <span class="client-heading">Our Client</span> <br><span class="about-heading">ABOUT US</span></p>
+            </div><br>
+            <div class="about">
+                <div class="top">
+
+                    <div class="profile">
+                        <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" id="client-image" >
+                    </div>
+                    <div class="personal-info">
+                        <h5 id="user-name">SEMANA SHEMA Parfait</h5>
+                        <h5 id="user-role">CEO </h5>
+                        <p>⭐⭐⭐⭐⭐⭐</p>
+                    </div><br>
+                </div>
+                <p id="client-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae earum aliquid harum similique blanditiis fugit quae, libero doloremque. Cumque ratione aspernatur vitae corporis impedit optio perferendis tenetur aperiam maiores? </p>
+            </div><br>
+            <div class="tel-info">
+                <p id="phone-number"><i class="fa-solid fa-phone-volume"></i> +250788123456</p>
+                <a href="#" id="client-email"><i class="fa-solid fa-globe"></i> shemasemana.com</a>
+            </div>
+
+        </div>
+        <!-- ----------------------------card 2-------------------- -->
+        <div class="client-card">
+            <div class="title">
+                <p>What <br> <span class="client-heading">Our Client</span> <br><span class="about-heading">ABOUT US</span></p>
+            </div><br>
+            <div class="about">
+                <div class="top">
+
+                    <div class="profile">
+                        <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" alt="">
+                    </div>
+                    <div class="personal-info">
+                        <h5 id="user-name">SEMANA SHEMA Parfait</h5>
+                        <h5 id="user-role">CEO </h5>
+                        <p>⭐⭐⭐⭐⭐⭐</p>
+                    </div><br>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae earum aliquid harum similique blanditiis fugit quae, libero doloremque. Cumque ratione aspernatur vitae corporis impedit optio perferendis tenetur aperiam maiores? </p>
+            </div><br>
+            <div class="tel-info">
+                <p id="phone-number"><i class="fa-solid fa-phone-volume"></i> +250788123456</p>
+                <a href="#" id="client-email"><i class="fa-solid fa-globe"></i> shemasemana.com</a>
+            </div>
+
+        </div>
+        <!-- ----------------------------card 3-------------------- -->
+        <div class="client-card">
+            <div class="title">
+                <p>What <br> <span class="client-heading">Our Client</span> <br><span class="about-heading">ABOUT US</span></p>
+            </div><br>
+            <div class="about">
+                <div class="top">
+
+                    <div class="profile">
+                        <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" alt="">
+                    </div>
+                    <div class="personal-info">
+                        <h5 id="user-name">SEMANA SHEMA Parfait</h5>
+                        <h5 id="user-role">CEO </h5>
+                        <p>⭐⭐⭐⭐⭐⭐</p>
+                    </div><br>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae earum aliquid harum similique blanditiis fugit quae, libero doloremque. Cumque ratione aspernatur vitae corporis impedit optio perferendis tenetur aperiam maiores? </p>
+            </div><br>
+            <div class="tel-info">
+                <p id="phone-number"><i class="fa-solid fa-phone-volume"></i> +250788123456</p>
+                <a href="#" id="client-email"><i class="fa-solid fa-globe"></i> shemasemana.com</a>
+            </div>
+
+        </div>
+             <!-- ----------------------------card 3-------------------- -->
+             <div class="client-card">
+                <div class="title">
+                    <p>What <br> <span class="client-heading">Our Client</span> <br><span class="about-heading">ABOUT US</span></p>
+                </div><br>
+                <div class="about">
+                    <div class="top">
+    
+                        <div class="profile">
+                            <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" alt="">
+                        </div>
+                        <div class="personal-info">
+                            <h5 id="user-name">SEMANA SHEMA Parfait</h5>
+                            <h5 id="user-role">CEO </h5>
+                            <p>⭐⭐⭐⭐⭐⭐</p>
+                        </div><br>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae earum aliquid harum similique blanditiis fugit quae, libero doloremque. Cumque ratione aspernatur vitae corporis impedit optio perferendis tenetur aperiam maiores? </p>
+                </div><br>
+                <div class="tel-info">
+                    <p id="phone-number"><i class="fa-solid fa-phone-volume"></i> +250788123456</p>
+                    <a href="#" id="client-email"><i class="fa-solid fa-globe"></i> shemasemana.com</a>
+                </div>
+    
+            </div>
+        <!-- ----------------------------card 4-------------------- -->
+        <div class="client-card">
+            <div class="title">
+                <p>What <br> <span class="client-heading">Our Client</span> <br><span class="about-heading">ABOUT US</span></p>
+            </div><br>
+            <div class="about">
+                <div class="top">
+
+                    <div class="profile">
+                        <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg" alt="">
+                    </div>
+                    <div class="personal-info">
+                        <h5 id="user-name">SEMANA SHEMA Parfait</h5>
+                        <h5 id="user-role">CEO </h5>
+                        <p>⭐⭐⭐⭐⭐⭐</p>
+                    </div><br>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae earum aliquid harum similique blanditiis fugit quae, libero doloremque. Cumque ratione aspernatur vitae corporis impedit optio perferendis tenetur aperiam maiores? </p>
+            </div><br>
+            <div class="tel-info">
+                <p id="phone-number"><i class="fa-solid fa-phone-volume"></i> +250788123456</p>
+                <a href="#" id="client-email"><i class="fa-solid fa-globe"></i> shemasemana.com</a>
+            </div>
+
+        </div>
+    </div><br>
+  </center>
+    <center>
+        <button id="add-comment" onclick="openCommentForm()">Add a Comment</button>
+    </center>
+ <center>
+    <div class="client-testimony-form" style="display: none;">
+        <i class="fa-solid fa-xmark" title="Remove" onclick="closeCommentForm()"></i><br><br>
+        <h1>Leave a Testimony</h1><br><br>
+        <form id="comment-form"  >
+            <div class="all">
+            <div class="first">
+
+                <input type="text" placeholder="Your name" id="name" required><br><br>
+                <input type="text" placeholder="Your Email / website link" id="email" required><br><br>
+                <input type="text" placeholder="Phone Number" id="phone" required><br><br>
+            </div>
+            <div class="second">
+
+                <input type="color" id="color" required><br><br>
+                <input type="text" placeholder="Your Role" id="role" required><br><br>
+                <input type="file" id="image" required><br><br>
+            </div>
+        </div>
+        <center>
+
+            <textarea name="" id="commenter-description" cols="58" rows="10" placeholder="Testimony" required></textarea><br><br>
+            <button type="submit" >Submit</button>
+        </center>
+        </form>
+        <div class="succes-alert"><br>
+            <!-- <i class="fa-solid fa-xmark" onclick="closeAlert()"></i><br><br> -->
+            <h3>Testimony Added Successfully</h4><br>
+            <p><i class="fa-solid fa-circle-check"></i> Thank you for your feedback!  Your testimony has been successfully added.</p><br><br>
+            
+        </div>
+
+        <div class="error-alert"><br>
+            <!-- <i class="fa-solid fa-xmark" onclick="closeAlert()"></i><br><br> -->
+            <h3>Testimony Not Added</h3><br>
+            <p><i class="fa-solid fa-circle-exclamation"></i> Sorry, there was an error adding your testimony. Please try again later.</p><br><br>
+    </div>
+    </div>
+ </center>
+   <!-- </div> -->
+   </div><br><br>
+   <!-- ------------------get in touch----------------- -->
+    <div class="contact-me" id="contact">
+        <h1>Get in touch</h1>
+        <div class="contact-info">
+            <div class="contact-details">
+                <div class="phone-icon">
+                    <img src="./images/contact/copy2.png" alt="">
+                </div>
+
+                <div class="contacts-info" style=" animation: fromTop 2s ;">
+
+                    <p style="width: 80%; ">For any inquiries or collaborations, please don’t hesitate to get in touch</p><br>
+                    <div class="cards">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="details">
+                            <h3>Head Office</h3><br>
+                            <p>Kigali - Rwanda</p>
+                            <p> kicukiro - KK 567 ST</p>
+                        </div>
+                    </div><br>
+    
+                    <div class="cards">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="details">
+                            <h3>Email Me</h3><br>
+                            <p>semana@blackdollar.ltd</p>
+                            <p>semana@umwirabura.org</p>
+                        </div>
+                    </div><br>
+    
+                    <div class="cards">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div class="details">
+                            <h3>Call me</h3><br>
+                            <p>Phone: +250 787 845 162</p>
+                            <p>Phone: +250 722 245 279</p>
+                            <p></p>
+                        </div>
+                    </div><br><br>
+                    <h3>Follow me on my social media</h3><br>
+                    <div class="social-media">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form" style="animation: ToTopQutoes 2s;">
+                <form action="" method="post">
+                   
+                    <input type="text" id="name" placeholder="Enter Your Name"><br><br><br>
+                 
+                    <input type="email" id="email" placeholder="Enter your Email"><br><br><br>
+                 
+                    <input type="text" id="subject" placeholder="Your subject"  required><br><br><br>
+                    <textarea name="" id="textarea-input" cols="30" rows="10" placeholder="Your Email"></textarea><br><br>
+                  
+
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div><br>
+        <div class="map-container">
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7974.837598899731!2d30.07554933583899!3d-1.9872161419792742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srw!4v1745852723524!5m2!1sen!2srw" width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          
+
+    </div>
+
+    <!-- -----------------------footer------------------ -->
+<div class="footer">
+    <div class="titles">
+        <div class="left" style="animation:  fromLeftCareer 2s;">
+            <h2>Do you want to make beautiful products?</h2><br>
+            <button><i class="fa-regular fa-envelope-open"></i> hire me</button>
+        </div>
+
+        <div class="right" style="animation: ToTopQutoes 2s;" >
+          <p>Coding the future with Semana Shema Parfait — one line at a time from Kigali, Rwanda.</p>
+        </div>
+    </div>
+
+    <div class="big-name">
+        <p>SEMANA  SHEMA  Parfait</p>
+    </div>
+
+    <div class="footer-links" style="animation:  fromLeftCareer 2s;">
+        <p>Follow me: </p>
+        <div class="icons">
+
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+        </div>
+    </div>
+
+</div>
+<footer>
+    <div class="logo" style="animation:  fromLeftCareer 2s;">
+        <img src="./images/WhatsApp Image 2024-12-08 at 09.50.57_d443e393.jpg">
+        <div class="my_name">
+            <h4>Semana</h4>
+            <p>Parfait</p>
+        </div>
+
+    </div>
+    &copy; 2025 — Built by Semana Shema Parfait — All rights reserved.
+    
+</footer>
+<script src="index.js"></script>
+
+</body>
+</html>
