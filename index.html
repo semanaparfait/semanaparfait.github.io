@@ -12,12 +12,134 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+    .container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.profile-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 6px;
+    box-sizing: border-box;
+}
+
+.green-circle {
+    width: 320px;
+    height: 320px;
+    border-color: transparent;
+    border-top-color: rgba(0, 128, 0, 0.8);
+    border-right-color: rgba(0, 128, 0, 0.8);
+    animation: rotateClockwise 12s linear infinite;
+    z-index: 1;
+    filter: drop-shadow(0 0 5px rgba(0, 128, 0, 0.5));
+}
+
+.blue-circle {
+    width: 280px;
+    height: 280px;
+    border-color: transparent;
+    border-top-color: rgba(0, 0, 255, 0.8);
+    border-right-color: rgba(0, 0, 255, 0.8);
+    animation: rotateClockwise 8s linear infinite;
+    z-index: 2;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.5));
+}
+
+.yellow-circle {
+    width: 250px;
+    height: 250px;
+    border-color: transparent;
+    border-bottom-color: rgba(255, 215, 0, 0.9);
+    border-left-color: rgba(255, 215, 0, 0.9);
+    animation: rotateCounterClockwise 10s linear infinite;
+    z-index: 3;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes rotateClockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounterClockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+    border-radius: 50%;
+    animation: shine 5s infinite linear;
+    z-index: 0;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
     </style>
     
 
 </head>
 <body>
+    <div class="succes-alert1" style="display: none;"><br>
+        <!-- <i class="fa-solid fa-xmark" onclick="closeAlert()"></i><br><br> -->
+         <p id="loading"></p>
+        <h3>Testimony Added Successfully</h4><br>
+        <p><i class="fa-solid fa-circle-check"></i> Thank you for your feedback!  Your testimony has been successfully added.</p><br><br>
+        
+    </div>
     <!-- akantu kubwenge by bigg -->
     <!-- <marquee behavior="scroll" direction="left">BOSS</marquee> -->
     <div class="chat-bot">
@@ -43,17 +165,17 @@
                 <div class="message bot-message">
                     Hi there 👋 How can I help you today?
                 </div>
-                <div class="message bot-message">
-                    👋 Hello! Thanks for reaching out.
-
-I'm currently unavailable right now, but don’t worry — you can still leave your message and I’ll get back to you as soon as possible.
-
-📩 You can also contact me directly:
-- Email: semanaparfait@gmail.com  
-- Phone/WhatsApp: +237 6XX XXX XXX  
-- GitHub: https://github.com/semanaparfait  
-- LinkedIn: https://linkedin.com/in/semanaparfait  
-- Portfolio: https://your-portfolio-link.com
+                <div class="message bot-message-last">
+                    👋 Hello! Sorry am not available now  <br><br>
+📩 You can contact me directly: <br><br>
+ <p><i class="fa-solid fa-envelope"></i> <a href="mailto:shemaparfait7@gmail.com">shemaparfait7@gmail.com</a></p><br>
+<p><i class="fa-solid fa-phone-volume"></i> <a href="tel:+250722245279">Call +250 722 245 279 <br> <p style="margin-left: 2rem;">+250 787 845 162</p></a>
+   </p><br> 
+<p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/250787845162" target="_blank">+250 787 845 162</a>
+</p><br>
+ <p><i class="fa-brands fa-github-alt"></i> <a href="https://github.com/semanaparfait">GitHub-link</a> </p> <br>
+ <p><i class="fa-brands fa-linkedin-in"></i> <a href="https://linkedin.com/in/semanaparfait">linkedin-profile</a>  </p><br>
+ <p>Portfolio <a href="https://semanaparfait.github.io/">semanaportfolio</a></p><br><br>
 
 Thank you for your patience — I appreciate it! 🙏
 
@@ -106,7 +228,7 @@ Thank you for your patience — I appreciate it! 🙏
 
             </div>
             <div class="links-button" style="display: flex; gap: 2rem;">
-                <i class="fa-regular fa-circle-xmark" onclick="closemenu()" style="color: wheat;" ></i>
+                <i class="fa-regular fa-circle-xmark" onclick="closemenu()" style="color: rgb(0, 0, 0); " ></i>
 
                 <ul class="nav-links">
           
@@ -117,8 +239,9 @@ Thank you for your patience — I appreciate it! 🙏
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
                 </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdcu-sHUZHF-w5NlCrpfZBl5zsngqD-_dgk0kizuZ6rSPZEw/viewform" class="hireBtn"><button><i class="fa-solid fa-download"></i> hire Me</button></a>
     
-                <button><i class="fa-solid fa-paper-plane"></i> hire Me</button>
+                
             </div>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             
@@ -134,18 +257,23 @@ Thank you for your patience — I appreciate it! 🙏
             <p id="qutoes"><em>"Bringing ideas to life through elegant code."</em></p><br>
 
             <div class="hero-links">
-                <a href="#" class="hireme"><i class="fa-thin fa-envelope"></i> Let's Work Together</a>
+                <a href="semana cv 2025.pdf" class="hireme"><i class="fa-regular fa-envelope"></i> Download cv</a>
                 <a href="#portfolio-section" class="seeportfolio">View My Work</a>
             </div><br>
+            <div class="info-intro" style="animation: ToTopQutoes 2s; display: flex; gap: 2rem;">
+                <i class="fa-solid fa-user-secret"></i>
+                <p id="my-Intro">Hi, I'm Semana — a passionate front-end developer and software engineering student. I build user-friendly websites, building fast, responsive, and visually engaging web experiences. with clean code and creative design. I'm always learning and love turning ideas into digital solutions.</p><br>
+            </div><br>
             
-            <p id="my-Intro">Hi, I'm Semana — a passionate front-end developer and software engineering student. I build user-friendly websites, building fast, responsive, and visually engaging web experiences. with clean code and creative design. I'm always learning and love turning ideas into digital solutions.</p><br>
-            <div class="hero-platform">
+            <div class="hero-platform" style="margin-left: 2rem;">
                 <p>Connect with me:</p>
                 <div class="icons">
 
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                    
+                    <a href="https://github.com/semanaparfait"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shema-parfait-b534482a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/semana_wa_mbere/profilecard/?igsh=MXZ2ZWcweDZnOWcweA=="><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/250787845162" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                     <i class="fa-brands fa-x-twitter"></i>
                 </div>
             </div>
@@ -187,7 +315,7 @@ Thank you for your patience — I appreciate it! 🙏
     <!-- ----------------------services section--------------------- -->
     <!-- <center class="none"> -->
         <div class="services-section" id="services">
-            <h1>What I do</h1><br>
+            <h1>What I do best</h1><br>
             <p class="service-description">I offer expert web development, game development, and cybersecurity solutions that combine cutting-edge technology and creative design to deliver high-performance, secure, and engaging digital experiences. Whether you're looking to build a dynamic website, create an immersive game, or protect your online presence, I provide innovative solutions tailored to your needs.</p><br>
             
             <div class="timeline">
@@ -283,15 +411,15 @@ Thank you for your patience — I appreciate it! 🙏
                     data-tecskills6="Node js">
                     <img src="./images/projects/screencapture-127-0-0-1-5502-contact-html-2025-05-01-09_28_02.png" alt="Admin Dashboard" id="project-image">
                     <div class="overFlow">
-                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                        <button>Explore more <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
     
                 </div>
             
                 <div class="project"
                     data-image="./images/projects/Capture2.PNG"
-                    data-title="E-commerce Store"
-                    data-description="A full-featured online shop with product listings, cart, and checkout system."
+                    data-title="Power of AI"
+                    data-description="Artificial Intelligence is revolutionizing the way we interact with technology. It enables machines to learn, adapt, and make decisions—transforming industries, boosting productivity, and solving problems faster than ever before. From smart assistants to advanced data analysis, AI is not just shaping the future—it’s powering it."
                     data-tecskills="React"
                     data-tecskills2="Firebase"
                     data-tecskills3="Javascript"
@@ -300,15 +428,15 @@ Thank you for your patience — I appreciate it! 🙏
                     data-tecskills6="Node js">
                     <img src="./images/projects/Capture2.PNG"alt="E-commerce Store" id="project-image">
                     <div class="overFlow">
-                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                        <button>Explore more <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
     
                 </div>
             
                 <div class="project"
                     data-image="./images/projects/screencapture-127-0-0-1-5502-payment-html-2025-05-01-09_28_30.png" 
-                    data-title="Personal Portfolio"
-                    data-description="A responsive personal portfolio to showcase projects, skills, and contact info."
+                    data-title="Payment methods "
+                    data-description="Our movie app offers secure and flexible payment methods for a smooth user experience. Users can pay for tickets or subscriptions using mobile money, credit/debit cards, and digital wallets like PayPal. All transactions are encrypted to ensure safety, making it easy for anyone to enjoy movies anytime, anywhere."
                     data-tecskills="HTML"
                     data-tecskills2="css"
                     data-tecskills3="Javascript"
@@ -317,15 +445,15 @@ Thank you for your patience — I appreciate it! 🙏
                     data-tecskills6="Node js">
                     <img src="./images/projects/screencapture-127-0-0-1-5502-payment-html-2025-05-01-09_28_30.png" id="project-image">
                     <div class="overFlow">
-                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                        <button>Explore more <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
     
                 </div>
             
                 <div class="project"
                     data-image="./images/projects/screencapture-127-0-0-1-5501-event-html-2025-05-01-09_22_50.png"
-                    data-title="Startup Landing Page"
-                    data-description="A clean and modern landing page for promoting a tech startup or SaaS product."
+                    data-title="Event preparation"
+                    data-description="At Husterbase Rwanda, we specialize in organizing and managing all types of events. From weddings and birthdays to corporate functions and community gatherings, we handle every detail with creativity and professionalism. Our goal is to make your event smooth, memorable, and perfectly tailored to your vision."
                     data-tecskills="React"
                     data-tecskills2="Tailwind CSS"
                     data-tecskills3="Javascript"
@@ -334,15 +462,15 @@ Thank you for your patience — I appreciate it! 🙏
                     data-tecskills6="Node js">
                     <img src="./images/projects/screencapture-127-0-0-1-5501-event-html-2025-05-01-09_22_50.png" alt="Startup Landing Page" id="project-image">
                     <div class="overFlow">
-                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                        <button>Explore more <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
     
                 </div>
             
                 <div class="project"
                     data-image="./images/projects/Capture4.PNG"
-                    data-title="Blog Platform"
-                    data-description="A blogging platform where users can create, edit, and delete posts."
+                    data-title="Trusted companies"
+                    data-description="At Husterbase Rwanda, we partner with trusted companies worldwide to deliver top-quality services. Our global network ensures reliability, professionalism, and access to the best solutions—whether you're planning an event, booking a visa service, or exploring new opportunities."
                     data-tecskills="React"
                     data-tecskills2="Tailwind CSS"
                     data-tecskills3="Javascript"
@@ -352,15 +480,16 @@ Thank you for your patience — I appreciate it! 🙏
                 
                     <img src="./images/projects/Capture4.PNG" alt="Blog Platform" id="project-image">
                     <div class="overFlow">
-                        <button>Explore more <i class="fa-light fa-arrow-right"></i></button>
+                        <button>Explore more <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
     
                 </div>
             
                 <div class="project"
                     data-image="./images/projects/Capture.PNG"
-                    data-title="Weather App"
-                    data-description="A simple app that shows real-time weather updates for any city."
+                    data-title="Personal portfolio"
+                    data-description="
+                    Welcome to my portfolio, where innovation meets functionality. I specialize in web development, game creation, and cybersecurity, combining technical expertise with creative design to deliver high-performance digital solutions. Explore my work and discover how I can help turn your ideas into reality."
                     data-tecskills="Firebase"
                     data-tecskills2="JavaScript"
                     data-tecskills3="Javascript"
@@ -387,6 +516,7 @@ Thank you for your patience — I appreciate it! 🙏
                         <i class="fa-solid fa-xmark"></i><br><br>
                         <img src="" id="project-image-card">
                         <h2 id="project-title"></h2><br>
+                        <a href="https://portifolio-eight-ashy-42.vercel.app/">personal-portfolio</a>
                         <p id="project-description"></p><br>
                         <div class="technologies">
                             <h4>Technologies: </h4>
@@ -413,6 +543,22 @@ Thank you for your patience — I appreciate it! 🙏
             <div class="certificate-divs">
         
                 <div class="certificate"
+                    data-image="./images/certficates/Screenshot (917).png"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/Screenshot (917).png" alt="Certificate Image">
+                </div>
+        
+                <div class="certificate"
+                    data-image="./images/certficates/Screenshot (918).png"
+                    data-title="Certificate of Completion"
+                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
+                    data-tecskills="HTML, CSS, JavaScript, React">
+                    <img src="./images/certficates/Screenshot (918).png" alt="Certificate Image">
+                </div>
+        
+                <div class="certificate"
                     data-image="./images/certficates/1600w-Qn4Rei141MM.webp"
                     data-title="Certificate of Completion"
                     data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
@@ -420,47 +566,31 @@ Thank you for your patience — I appreciate it! 🙏
                     <img src="./images/certficates/1600w-Qn4Rei141MM.webp" alt="Certificate Image">
                 </div>
         
-                <div class="certificate"
-                    data-image="./images/certficates/download (1).jpg"
-                    data-title="Certificate of Completion"
-                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
-                    data-tecskills="HTML, CSS, JavaScript, React">
-                    <img src="./images/certficates/download (1).jpg" alt="Certificate Image">
-                </div>
-        
-                <div class="certificate"
-                    data-image="./images/certficates/1600w-Qn4Rei141MM.webp"
-                    data-title="Certificate of Completion"
-                    data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
-                    data-tecskills="HTML, CSS, JavaScript, React">
-                    <img src="./images/certficates/1600w-Qn4Rei141MM.webp" alt="Certificate Image">
-                </div>
-        
-                <div class="certificate"
+                <!-- <div class="certificate"
                     data-image="./images/certficates/download (2).jpg"
                     data-title="Certificate of Completion"
                     data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
                     data-tecskills="HTML, CSS, JavaScript, React">
                     <img src="./images/certficates/download (2).jpg" alt="Certificate Image">
-                </div>
+                </div> -->
         
             
         
-                <div class="certificate"
+                <!-- <div class="certificate"
                     data-image="./images/certficates/download.jpg"
                     data-title="Certificate of Completion"
                     data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
                     data-tecskills="HTML, CSS, JavaScript, React">
                     <img src="./images/certficates/download.jpg" alt="Certificate Image">
-                </div>
+                </div> -->
         
-                <div class="certificate"
+                <!-- <div class="certificate"
                     data-image="./images/certficates/download.png"
                     data-title="Certificate of Completion"
                     data-description="Certificate of Completion for the Software Development Bootcamp, showcasing skills in HTML, CSS, JavaScript, and React."
                     data-tecskills="HTML, CSS, JavaScript, React">
                     <img src="./images/certficates/download.png" alt="Certificate Image">
-                </div>
+                </div> -->
         
             </div>
         </div>
@@ -1153,7 +1283,7 @@ Thank you for your patience — I appreciate it! 🙏
                 <div class="contacts-info" style=" animation: fromTop 2s ;">
 
                     <p style="width: 80%; ">For any inquiries or collaborations, please don’t hesitate to get in touch</p><br>
-                    <div class="cards">
+                    <div class="cards card1">
                         <i class="fa-solid fa-location-dot"></i>
                         <div class="details">
                             <h3>Head Office</h3><br>
@@ -1223,7 +1353,14 @@ Thank you for your patience — I appreciate it! 🙏
     <div class="titles">
         <div class="left" style="animation:  fromLeftCareer 2s;">
             <h2>Do you want to make beautiful products?</h2><br>
-            <button><i class="fa-regular fa-envelope-open"></i> hire me</button>
+            <div class="buttons" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdcu-sHUZHF-w5NlCrpfZBl5zsngqD-_dgk0kizuZ6rSPZEw/viewform"><button><i class="fa-regular fa-envelope-open"></i> hire me</button></a>
+                <a href="semana cv 2025.pdf">
+                    <button><i class="fa-solid fa-download"></i> Download CV</button>
+                </a>
+            </div><br><br>
+            
         </div>
 
         <div class="right" style="animation: ToTopQutoes 2s;" >
@@ -1239,9 +1376,10 @@ Thank you for your patience — I appreciate it! 🙏
         <p>Follow me: </p>
         <div class="icons">
 
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-linkedin-in"></i>
-            <i class="fa-brands fa-instagram"></i>
+            <a href="https://github.com/semanaparfait"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shema-parfait-b534482a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/semana_wa_mbere/profilecard/?igsh=MXZ2ZWcweDZnOWcweA=="><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/250787845162" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             <i class="fa-brands fa-x-twitter"></i>
         </div>
     </div>

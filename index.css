@@ -24,7 +24,9 @@ body, html {
     left: 2%;
     position: fixed;
     z-index: 10;
+
     .chat-overflow{
+
         background: purple;
         width: 19rem;
         border-radius: 10px;
@@ -215,17 +217,35 @@ body, html {
     }
     
     .message {
-        max-width: 70%;
+        max-width: 80%;
         padding: 10px 16px;
         border-radius: 16px;
         position: relative;
         word-wrap: break-word;
+    }
+    .bot-message-last{
+        /* background-color: #ffffff; */
+        color: black;
+        background-color: #e6e7e9;
+        max-width: 100%;
+        a{
+            text-decoration: none;
+            color: purple;
+        }
+        /* a:hover{
+            color: #1a73e8;
+        } */
+        i{
+            font-size: 30px;
+        }
     }
     
     .bot-message {
         background-color: #e6e7e9;
         align-self: flex-start;
         border-bottom-left-radius: 4px;
+        color: #000;
+
     }
     
     .user-message {
@@ -300,6 +320,31 @@ body, html {
         background-color: inherit;
     }
 }
+/* ----------------------alert---------------- */
+.succes-alert1{
+    background-color: rgb(255, 255, 255);
+    box-shadow: green -5px 9px 2px;
+    width: 34%;
+    border-radius: 10px;
+    /* position: relative; */
+    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+    /* display: none; */
+    animation: bouncingAlert 4s  ease;
+    #loading{
+        background-color: #0056b3;
+    }
+
+    .fa-circle-check{
+        /* background-color: green; */
+        color: green;
+        font-size: 23px;
+        font-weight: 700;
+    }
+}
 /* ----------------navbar------------------- */
 nav{
     .navbar{
@@ -344,11 +389,11 @@ nav{
                     text-decoration: none;
                 }
             }
-            li:hover{
+            /* li:hover{
                 background-color: #0056b3;
-                /* padding: 10px 20px; */
+                padding: 10px 20px;
                 border-radius: 20px;
-            }
+            } */
             
         }
         button{
@@ -361,6 +406,12 @@ nav{
 }
 /* ----------------------body/hero--------------- */
 .hero-section{
+    .icons{
+        a{
+            color: #000;
+        }
+    
+    }
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -484,7 +535,7 @@ nav{
 
 /* NEW ROTATING PROFILE CSS START  */
 
-.container {
+/* .container {
     position: relative;
     width: 320px;
     height: 320px;
@@ -598,7 +649,7 @@ nav{
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 /* NEW ROTATING PROFILE CSS END  */
 
@@ -657,6 +708,8 @@ nav{
 #welcome-mess{
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     animation: fromTop 2s ;
+    animation-timeline: view(); /* Tied to scroll */
+    animation-range: entry 0% entry 100%;
     
 }
 #my-career{
@@ -667,10 +720,10 @@ nav{
     animation: ToTopQutoes 2s;
 
 }
-#my-Intro{
+/* #my-Intro{
     animation: ToTopQutoes 2s;
 
-}
+} */
 .animations{
     /* background-color: #1cac1c; */
     animation-timeline: view();
@@ -738,7 +791,7 @@ nav{
     width: 50%;
     margin: 0 auto 40px;
     font-size: 1.1rem;
-    color: #4a7ba7;
+    color: #000000;
     line-height: 1.5;
     /* background-color: #9370DB; */
 }
@@ -1613,7 +1666,7 @@ nav{
                 right: 2%;
                 bottom: 5%;
                 
-                display: none;
+                /* display: none; */
                 animation: bouncingAlert 4s  ease;
 
                 .fa-circle-check{
@@ -1796,6 +1849,11 @@ nav{
         color: white;
         padding: 3rem;
         width: 100%;
+        .icons{
+            a{
+                color: white;
+            }
+        }
         .titles{
             display: flex;
             /* flex-wrap: wrap; */
@@ -1864,6 +1922,11 @@ nav{
             }
         }
     }
+    .fa-circle-xmark{
+        /* background-color: #1a73e8; */
+        display: none;
+        opacity: 0;
+    }
     /* ----------------------responsive--------------- */
 /* ------------responsive----------- */
 /* ---------------tablet mode-------------- */
@@ -1872,13 +1935,17 @@ nav{
     nav{
         /* display: none; */
     .navbar{
-        /* background-color: #1cac1c; */
+        /* background-color: #7aac1c; */
         ul{
             display: flex;
             flex-direction: column;
             /* gap: 2rem; */
+            /* display: block; */
+            /* background-color: #0056b3; */
         }
         .links-button{
+            display: flex;
+            flex-direction: column;
             /* background-color: #0056b3; */
             background-color: #ffffff;
             backdrop-filter: blur(20px);
@@ -1892,14 +1959,20 @@ nav{
             z-index: 2;
             transition: right .5s;
             button{
-                margin-top: 2rem;
+                padding: 10px;
+                /* background-color: #1cac1c; */
+                /* margin-top: 2rem; */
             }
             .fa-circle-xmark{
-                display: block;
+                display: flex;
                 position: absolute;
                 top: 3%;
                 right: 20%;
-                color: #000;
+                color: #ee1111;
+                opacity: 1;
+
+                /* background-color: #0056b3; */
+                /* color: red; */
             }
         }
     }
@@ -2248,4 +2321,48 @@ nav{
         }
     }
     }
+    @media (max-width: 575.98px) {
+        .python, .JavaScript, .html, .css, .php, .c-programming{
+            /* background-color: #0056b3; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            gap: 2rem;
+        }
+        .footer{
+            .titles{
+                /* background-color: #0056b3; */
+                display: block;
+                padding: 0;
+                /* place-items: center; */
+            }
+
+        }
+        .contact-info{
+            /* place-items: center; */
+            .contact-details{
+                /* background-color: #0056b3; */
+                /* place-items: center; */
+                /* text-align: center; */
+                .contacts-info{
+                    /* background-color: #1cac1c; */
+                    place-items: center;
+                    text-align: left;
+                    .card1{
+                        /* background-color: #0056b3; */
+                        padding: 0;
+                        margin-right: 2rem;
+                    }
+
+                }
+            }
+            
+            .phone-icon {
+                display: none;
+                /* background-color: #162037; */
+            }
+        }
         
+      }
