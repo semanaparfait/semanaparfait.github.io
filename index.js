@@ -366,82 +366,82 @@ function scrollCommentRight(){
 
 // // Disable right-click
 // Disable right-click context menu
-document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-    alert("Right-click is disabled on this page contact SEMANA for more info Tel:+250787845162.");
-});
+// document.addEventListener('contextmenu', function(event) {
+//     event.preventDefault();
+//     alert("Right-click is disabled on this page contact SEMANA for more info Tel:+250787845162.");
+// });
 
-// Disable text copying using keyboard shortcuts (CTRL+C, Command+C)
-document.addEventListener('keydown', function(event) {
-    if ((event.ctrlKey && event.key === 'c') || 
-        (event.metaKey && event.key === 'c') || 
-        (event.ctrlKey && event.key === 'u') ||  // CTRL+U for view source
-        (event.metaKey && event.key === 'u') ||  // Command+U for view source
-        // F12 key for developer tools
-        event.key === 'F12' || 
-        // CTRL+SHIFT+I or Command+Option+I for inspect element
-        ((event.ctrlKey && event.shiftKey && event.key === 'i') || 
-         (event.metaKey && event.altKey && event.key === 'i'))) {
-        event.preventDefault();
-        alert("This action is disabled on this page contact SEMANA for more info Tel:+250787845162.");
-    }
-});
+// // Disable text copying using keyboard shortcuts (CTRL+C, Command+C)
+// document.addEventListener('keydown', function(event) {
+//     if ((event.ctrlKey && event.key === 'c') || 
+//         (event.metaKey && event.key === 'c') || 
+//         (event.ctrlKey && event.key === 'u') ||  // CTRL+U for view source
+//         (event.metaKey && event.key === 'u') ||  // Command+U for view source
+//         // F12 key for developer tools
+//         event.key === 'F12' || 
+//         // CTRL+SHIFT+I or Command+Option+I for inspect element
+//         ((event.ctrlKey && event.shiftKey && event.key === 'i') || 
+//          (event.metaKey && event.altKey && event.key === 'i'))) {
+//         event.preventDefault();
+//         alert("This action is disabled on this page contact SEMANA for more info Tel:+250787845162.");
+//     }
+// });
 
-// Disable copy operation
-document.addEventListener('copy', function(event) {
-    event.preventDefault();
-    alert("Copying is disabled on this page Contact SEMANA for more info Tel:+250787845162. ");
-});
+// // Disable copy operation
+// document.addEventListener('copy', function(event) {
+//     event.preventDefault();
+//     alert("Copying is disabled on this page Contact SEMANA for more info Tel:+250787845162. ");
+// });
 
-// Disable text selection
-document.addEventListener('selectstart', function(event) {
-    event.preventDefault();
-    return false;
-});
+// // Disable text selection
+// document.addEventListener('selectstart', function(event) {
+//     event.preventDefault();
+//     return false;
+// });
 
-// Detect and block DevTools opening
-(function() {
-    // Function to check if DevTools is open
-    function checkDevTools() {
-        const widthThreshold = window.outerWidth - window.innerWidth > 160;
-        const heightThreshold = window.outerHeight - window.innerHeight > 160;
+// // Detect and block DevTools opening
+// (function() {
+//     // Function to check if DevTools is open
+//     function checkDevTools() {
+//         const widthThreshold = window.outerWidth - window.innerWidth > 160;
+//         const heightThreshold = window.outerHeight - window.innerHeight > 160;
         
-        if (widthThreshold || heightThreshold) {
-            document.body.innerHTML = "Inspector tools detected. This action is not allowed contact SEMANA for more info Tel:+250787845162.";
-            return true;
-        }
-        return false;
-    }
+//         if (widthThreshold || heightThreshold) {
+//             document.body.innerHTML = "Inspector tools detected. This action is not allowed contact SEMANA for more info Tel:+250787845162.";
+//             return true;
+//         }
+//         return false;
+//     }
     
-    // Check periodically
-    setInterval(checkDevTools, 1000);
+//     // Check periodically
+//     setInterval(checkDevTools, 1000);
     
-    // Also listen for resize events which might indicate DevTools opening
-    window.addEventListener('resize', checkDevTools);
-})();
+//     // Also listen for resize events which might indicate DevTools opening
+//     window.addEventListener('resize', checkDevTools);
+// })();
 
-// Block F12 key specifically
-document.onkeydown = function(e) {
-    if (e.key === 'F12') {
-        e.preventDefault();
-        alert("Developer tools access is disabled contact SEMANA for more info Tel:+250787845162.");
-        return false;
-    }
-};
+// // Block F12 key specifically
+// document.onkeydown = function(e) {
+//     if (e.key === 'F12') {
+//         e.preventDefault();
+//         alert("Developer tools access is disabled contact SEMANA for more info Tel:+250787845162.");
+//         return false;
+//     }
+// };
 
-// Additional protection against inspect element
-document.addEventListener('keydown', function(e) {
-    // Prevent opening dev tools via various keyboard shortcuts
-    if ((e.ctrlKey && e.shiftKey && e.key === 'C') || // Chrome
-        (e.ctrlKey && e.shiftKey && e.key === 'J') || // Chrome
-        (e.ctrlKey && e.shiftKey && e.key === 'I') || // Chrome/Firefox
-        (e.metaKey && e.altKey && e.key === 'I') ||   // Safari/Chrome on Mac
-        (e.metaKey && e.altKey && e.key === 'J') ||   // Safari/Chrome on Mac
-        (e.metaKey && e.altKey && e.key === 'C')) {   // Safari/Chrome on Mac
-        e.preventDefault();
-        alert("Developer tools access is disabled contact me for more info Tel:+250787845162.");
-    }
-});
+// // Additional protection against inspect element
+// document.addEventListener('keydown', function(e) {
+//     // Prevent opening dev tools via various keyboard shortcuts
+//     if ((e.ctrlKey && e.shiftKey && e.key === 'C') || // Chrome
+//         (e.ctrlKey && e.shiftKey && e.key === 'J') || // Chrome
+//         (e.ctrlKey && e.shiftKey && e.key === 'I') || // Chrome/Firefox
+//         (e.metaKey && e.altKey && e.key === 'I') ||   // Safari/Chrome on Mac
+//         (e.metaKey && e.altKey && e.key === 'J') ||   // Safari/Chrome on Mac
+//         (e.metaKey && e.altKey && e.key === 'C')) {   // Safari/Chrome on Mac
+//         e.preventDefault();
+//         alert("Developer tools access is disabled contact me for more info Tel:+250787845162.");
+//     }
+// });
 // -----------------------opening menu on responsive------------------------------
 var sidemenu = document.querySelector(".links-button");
 
