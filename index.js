@@ -467,3 +467,44 @@ function closemenu(){
 //     console.log("ornella clicked changed");
 
 // }
+// -------------------contact us--------------
+const form = document.querySelector("form");
+const Username = document.getElementById("contact-username");
+const emailing = document.getElementById("User-contact-email");
+const subjecting = document.getElementById("subject");
+const message = document.getElementById("textarea-input");
+
+function sendEmail (){
+
+ const bodyMessage = `
+ Full Name: ${Username.value}<br>
+ Email: ${emailing.value}<br>
+ Subject: ${subjecting.value}<br>
+ Message: ${message.value}
+`;
+ Email.send({
+   Host : "smtp.elasticemail.com",
+   Username : "semana.coder.expert@gmail.com",
+   Password : "D6F5E3A4A93F840BF5D6817C9E62EDD9705B",
+   To : 'semana.coder.expert@gmail.com',
+   From : "semana.coder.expert@gmail.com",
+   Subject: "New message from contact form",
+   Body : bodyMessage
+}).then(response => {
+ if (response === "OK") {
+   Swal.fire({
+     title: "Good job!",
+     text: "Thanks for getting in touch ! We’ll review your submission shortly!",
+     icon: "success"
+   });
+ }
+});
+
+}
+
+
+form.addEventListener("submit" , (e) => {
+ e.preventDefault();
+
+ sendEmail();
+})

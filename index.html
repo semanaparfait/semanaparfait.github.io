@@ -376,12 +376,12 @@ Thank you for your patience — I appreciate it! 🙏
     <!-- --------------------------portfolio------------------- -->
      <div class="portfolio-section" id="portfolio-section">
         <div class="titles">
-            <div class="left-title">
-<center >
+            <!-- <div class="left-title"> -->
+<!-- <center > -->
     <h1>Portfolio showcase</h1><br>
-    <p>Welcome to my portfolio! Here, I showcase some of the projects I’ve worked on, highlighting my skills, creativity, and passion for technology. Each project reflects my journey, growth.</p>
-</center>
-            </div><br><br>
+    <p  class="portfolio-descriptio-more">Welcome to my portfolio! Here, I showcase some of the projects I’ve worked on, highlighting my skills, creativity, and passion for technology. Each project reflects my journey, growth.</p>
+<!-- </center><br><br> -->
+            <!-- </div><br><br> -->
 
 
                 <div class="right-titles">
@@ -517,7 +517,7 @@ Thank you for your patience — I appreciate it! 🙏
                         <i class="fa-solid fa-xmark"></i><br><br>
                         <img src="" id="project-image-card">
                         <h2 id="project-title"></h2><br>
-                        <a href="https://portifolio-eight-ashy-42.vercel.app/">personal-portfolio</a>
+                        <a href="https://portifolio-eight-ashy-42.vercel.app/">personal-portfolio</a><br><br>
                         <p id="project-description"></p><br>
                         <div class="technologies">
                             <h4>Technologies: </h4>
@@ -1322,18 +1322,15 @@ Thank you for your patience — I appreciate it! 🙏
             </div>
 
             <div class="contact-form" style="animation: ToTopQutoes 2s;">
-                <form action="" method="post">
+                <form method="POST" action="#" onsubmit="sendEmail(); reset(); return false;">
                    
-                    <input type="text" id="name" placeholder="Enter Your Name"><br><br><br>
+                    <input type="text" id="contact-username" placeholder="Enter Your Name"><br><br><br>
                  
-                    <input type="email" id="email" placeholder="Enter your Email"><br><br><br>
+                    <input type="email" id="User-contact-email" placeholder="Enter your Email"><br><br><br>
                  
                     <input type="text" id="subject" placeholder="Your subject"  required><br><br><br>
-                    <textarea name="" id="textarea-input" cols="30" rows="10" placeholder="Your Email"></textarea><br><br>
-                  
-
-
-                    <button type="submit">Send Message</button>
+                    <textarea name="" id="textarea-input" cols="30" rows="10" placeholder="Your message here"></textarea><br><br>
+                    <button type="submit" name="submit">Send Message</button>
                 </form>
             </div>
         </div><br>
@@ -1399,6 +1396,9 @@ Thank you for your patience — I appreciate it! 🙏
     
 </footer>
 <script src="index.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
